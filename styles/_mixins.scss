@@ -1,0 +1,26 @@
+@mixin headerFont ($fontSize, $color) {
+    font-family: $dokdo;
+    font-weight: 400;
+    font-size: $fontSize;
+    color: $color; 
+    margin: 0; 
+}
+
+@mixin bodyText ($fontSize, $color, $fontWeight, $lineHeight, $letterSpacing) {
+    font-family: $lato;
+    font-size: $fontSize; 
+    color: $color; 
+    font-weight: $fontWeight; 
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+    margin-top: 0; 
+}
+
+@mixin buttonText ($padding) {
+    font-family: $dokdo;
+    background-color: $mudGreen;
+    color: $iceBlue; 
+    padding: $padding; 
+    text-transform: capitalize;
+    font-size: 2rem; 
+}

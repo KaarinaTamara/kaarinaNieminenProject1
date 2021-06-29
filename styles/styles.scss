@@ -1,0 +1,525 @@
+// LINKING ALL STYLE SHEETS
+@import 'setup';
+@import 'mixins';
+@import 'variables';
+
+
+// GENERIC STYLING
+// headings and fonts
+
+h1 {
+    @include headerFont (11.5rem, $marigold);
+    float: right; 
+}
+
+h2 {
+    @include headerFont (10.5rem, $marigold); 
+    line-height: 6.96rem;
+    letter-spacing: 1.009rem;
+}
+
+h3 {
+    @include headerFont (4.5rem, $marigold); 
+    line-height: 5.8rem;
+    letter-spacing: .49rem;
+}
+
+h4 {
+    @include headerFont (4.15rem, $marigold);
+}
+
+h5 {
+    @include headerFont (4rem, $marigold);
+    line-height: 5.8px; 
+    letter-spacing: .43px; 
+    padding-bottom: 1rem; 
+}
+
+p {
+    @include bodyText (2rem, $iceBlue, 400, 3.2rem, .2rem)
+}
+
+// button
+.buttonAnchor {
+    @include buttonText (2%);
+}
+
+// NAVIGATION STYLINGS
+
+nav ul {
+    list-style-type: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem; 
+    letter-spacing: .1rem; 
+    line-height: 2.9rem; 
+}
+
+a {
+    text-decoration: none;
+    color: $iceBlue; 
+}
+
+
+//*** HOME PAGE *** 
+
+// HEADER SECTION 
+
+.headerHome {
+    background-image: url(../mindnsoul-assets/home-image-1.jpg);
+    background-size: cover; 
+    position: relative; 
+    height: 90vh; 
+}
+
+header h4 {
+    float: left; 
+}
+
+nav ul {
+    float: right;
+    margin-top: 0;  
+}
+
+nav li {
+    display: inline-block; 
+}
+
+nav a {
+    padding: 1rem; 
+    margin-top: 0; 
+}
+
+.selected {
+    color: $marigold;
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline; 
+}
+
+// end of header styling
+
+.image1 {
+    width: 25%; 
+    float: left;  
+    object-fit: cover;
+    position: absolute; 
+    bottom: -40px; 
+    left: 0; 
+}
+
+// adventure section styling
+
+.adventure {
+    background-color: $camoGreen;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto;
+    grid-template-areas: "adventureText adventureImg"; 
+    margin: 0 auto; 
+}
+
+.adventureText {
+    width: 80%; 
+    margin: 5% auto; 
+}
+
+.adventureImg {
+    display: flex; 
+    justify-content: center;
+}
+
+.adventurePic {
+    width: 50%; 
+    margin: auto; 
+    box-shadow: -1rem 1rem 0 $mudGreen; 
+}
+
+// gallery section styling
+
+.yogaGallery {
+    background-color: $charcoal;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 1fr; 
+    column-gap: 2%;
+    padding-top: 4%; 
+    padding-bottom: 4%;    
+}
+
+.yogaGallery1 {
+    grid-column-start: 2;
+}
+
+.yogaGallery1:hover,
+.yogaGallery1:focus {
+    opacity: .5;
+}
+
+.yogaGallery2 {
+    grid-column-start: 3; 
+}
+
+.yogaGallery2:hover,
+.yogaGallery2:focus {
+    opacity: .5;
+}
+
+.yogaGallery3 {
+    grid-column-start: 4; 
+}
+
+.yogaGallery3:hover,
+.yogaGallery3:focus {
+    opacity: .5;
+}
+
+// custom offers section styling
+
+.customOffers {
+    background-color: $camoGreen; 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 10px; 
+    padding: 4%; 
+}
+
+.customOffers i {
+    color: $iceBlue;
+    background-color: $mudGreen;
+    padding: 8px; 
+    border-radius: 50%; 
+}
+
+.customOffers i:hover,
+.customOffers i:focus {
+    background-color: $iceBlue; 
+    color: $mudGreen; 
+}
+
+i + h5 {
+    display: inline-block; 
+}
+
+.customOffersLabel {
+    display: inline; 
+}
+
+// programs section styling
+
+.programs {
+    background-color: $charcoal;
+    height: auto; 
+    display: flex; 
+}
+
+.groupImg, 
+.groupText, 
+.locationsText, 
+.locationsImg {
+    // width: 50%; 
+}
+
+// grid styling for programs section
+// .programs {
+//     background-color: $charcoal;
+//     height: auto;
+//     display: grid; 
+//     grid-template-columns: repeat(12, 1fr);
+//     grid-template-rows: repeat(2, auto);
+//     position: relative; 
+// }
+
+// .groupImg {
+//     grid-column-start: 1;
+//     grid-column-end: 6;
+//     position: absolute; 
+//     top: -40px; 
+//     left: 0; 
+//     box-shadow: 1rem 1rem 0 $marigold; 
+//     display: block; 
+//     font-size: 0;
+// }
+
+// .groupText {
+//     grid-row-start: 2; 
+//     grid-column-start: 1;
+//     grid-column-end: 6; 
+// }
+
+// .locationText {
+//     grid-column-start: 7; 
+//     grid-column-end: 12; 
+//     grid-row-start: 1; 
+//     padding-top: 1.5rem; 
+// }
+
+// .locationImg {
+//     grid-column-start: 7;
+//     grid-column-end: 12;
+//     grid-row-start: 1; 
+//     position: absolute; 
+//     bottom: -20px; 
+//     right: 0; 
+//     font-size: 0; 
+//     box-shadow: -1rem 1rem 0 $marigold;
+// }
+
+// free trials section styling
+
+.trials {
+    background-color: $camoGreen;
+    height: auto; 
+    margin: 0 auto; 
+}
+
+.trials h5 {
+    text-align: center;  
+}
+
+.trialsText {
+    width: 70%;  
+    margin: 0 auto; 
+    padding-top: 10%; 
+    padding-bottom: 10%; 
+    height: auto; 
+}
+
+// FOOTER
+
+footer p {
+    background-color: $charcoal;
+    text-align: center; 
+    margin: 0; 
+}
+
+// *** END OF HOMEPAGE ***
+
+// *** CONTACT PAGE ***
+
+// contact header
+
+.contactHeader {
+    background-image: url(../mindnsoul-assets/contact-image-1.jpg);
+    height: 90vh;   
+    position: relative; 
+}
+
+.contactHeader h2 {
+    float: left; 
+    padding-top: 10%; 
+}
+
+// body of contact styling
+
+.contactBody {
+    background-color: $camoGreen;
+    height: 100vh; 
+}
+
+.contactBox {
+    position: absolute; 
+    bottom: -20vw; 
+    left: 0; 
+    background-color: $charcoal; 
+    width: 50vw; 
+    margin-left: 5%; 
+    padding: 4rem; 
+    box-shadow: 1rem 1rem 0 $marigold;
+}
+
+.contactForm input,
+.contactForm textarea { 
+    margin: 0 auto; 
+    background-color: $charcoal; 
+    // color: $iceBlue;
+    // font-size: 2rem; 
+; 
+}
+
+input#name,
+input#email {
+    margin: 0 5% 8% 0; 
+    border-width: 0 0 2px;  
+    border-color: $marigold; 
+    width: 40%; 
+    color: $iceBlue;
+    font-size: 2rem;   
+}
+
+textarea#message {
+    border: 2px $marigold solid; 
+    color: $iceBlue;
+    font-size: 2rem; 
+    margin-bottom: 5%; 
+    resize: none; 
+    width: 90%; 
+    height: 10rem; 
+}
+
+button {
+    background-color: $mudGreen; 
+    color: $marigold; 
+    border: none; 
+    width: 90%; 
+    height: auto; 
+    padding: 1rem; 
+    font-family: 'Dokdo', cursive;
+    font-size: 2rem;
+}
+
+.contactInfo {
+    float: right;
+}
+
+.contactInfo i{ 
+    color: $marigold; 
+    font-size: 2rem; 
+}
+
+// ***END OF CONTACT STYLING***
+
+// ***BLOG STYLING***
+
+// blog header
+
+.headerBlog {
+    background-image: url(../mindnsoul-assets/blog-image-1.jpg);
+    height: 90vh;   
+    position: relative; 
+}
+
+
+// body of blog styling
+
+.bodyBlog {
+    background-color: $camoGreen;
+}
+
+.containerBlog {
+    display: grid; 
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 2fr, 1fr, 1fr; 
+    row-gap: 30px; 
+}
+
+// discover section styling
+
+.discover {
+    grid-column-start: 1; 
+    grid-column-end: 8;
+    // position: absolute; 
+    top: 0; 
+    left: 0; 
+}
+
+.discoverImg {
+    width: 98%; 
+    box-shadow: 1rem 1rem 0 $mudGreen;
+}
+
+.discoverText {
+    border-style: none solid solid none; 
+    border-width: 4px;  
+    border-color: $mudGreen; 
+}
+
+.discover h3 {
+    margin: 0; 
+}
+
+.discover p {
+    width: 90%; 
+    margin: 0 auto; 
+}
+
+.title {
+    font-family: $dokdo; 
+}
+
+// mission section styling
+
+.mission {
+    grid-column-start: 10; 
+    grid-column-end: 13; 
+}
+
+.missionImg {
+    margin-right: 0; 
+    display: block; 
+    border-bottom: 0; 
+    box-shadow: -1rem 1rem 0 $mudGreen
+}
+
+.missionText {
+    background-color: $mudGreen;
+    padding-top: 4%;  
+    margin: 0 auto; 
+}
+
+.missionList {
+    color: $iceBlue; 
+    list-style: none; 
+    font-size: 1.5rem; 
+}
+
+.missionList li:before {
+    content: "•";
+    color: $marigold; 
+    padding-right: .5rem; 
+}
+
+// comments section styling
+
+.comments {
+    grid-column-start: 2;
+    grid-column-end: 8; 
+}
+
+.comments h5 {
+    color: $iceBlue; 
+    padding-bottom: 2rem; 
+}
+
+.davin,
+.lisa {
+    display: flex; 
+}
+
+.davin img,
+.lisa img {
+    height: 50%; 
+}
+
+.comments p span {
+    color: $marigold; 
+}
+
+// comment form styling
+
+.blogBox {
+    grid-row-start: 3; 
+    grid-column-start: 2;
+    grid-column-end: 8; 
+    margin-bottom: 40px; 
+}
+
+.blogForm input, 
+.blogForm textarea {
+    background-color: $camoGreen;
+}
+
+// ***RESPONSIVE DESIGN***
+
+//HEADER STYLING FOR ALL PAGES 
+@media (max-width: 900px) {
+    h4 {
+        visibility: hidden;
+    }
+}
+
+
+// INDEX RESPONSIVE DESIGN
+
