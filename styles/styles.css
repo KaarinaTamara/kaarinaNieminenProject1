@@ -465,14 +465,6 @@ i + h5 {
   display: inline;
 }
 
-.programs {
-  background-color: #262725;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .trials {
   background-color: #1E140E;
   height: auto;
