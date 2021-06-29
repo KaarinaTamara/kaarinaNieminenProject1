@@ -46,6 +46,15 @@ p {
 
 // NAVIGATION STYLINGS
 
+header i {
+    position: absolute; 
+    top: 2.5rem; 
+    right: 2.5rem; 
+    color: $marigold; 
+    font-size: 3rem; 
+    visibility: hidden; 
+}
+
 nav ul {
     list-style-type: none;
     font-family: 'Lato', sans-serif;
@@ -191,6 +200,7 @@ nav a:focus {
     background-color: $mudGreen;
     padding: 8px; 
     border-radius: 50%; 
+    font-size: 2rem; 
 }
 
 .customOffers i:hover,
@@ -203,66 +213,52 @@ i + h5 {
     display: inline-block; 
 }
 
-.customOffersLabel {
-    display: inline; 
+// programs section styling
+.programs {
+    background-color: $charcoal;
+    height: auto;
+    display: grid; 
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, auto);
+    position: relative; 
 }
 
-// programs section styling
+.groupImg {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    position: absolute; 
+    top: -40px; 
+    left: 0; 
+    box-shadow: 1rem 1rem 0 $marigold; 
+    display: block; 
+    font-size: 0;
+}
 
-// .programs {
-//     background-color: $charcoal;
-//     height: auto; 
-//     display: flex; 
-// }
+.groupText {
+    grid-row-start: 2; 
+    grid-column-start: 1;
+    grid-column-end: 6; 
+}
 
+.locationText {
+    grid-column-start: 7; 
+    grid-column-end: 12; 
+    grid-row-start: 1; 
+    padding-top: 1.5rem; 
+}
 
-// grid styling for programs section
-// .programs {
-//     background-color: $charcoal;
-//     height: auto;
-//     display: grid; 
-//     grid-template-columns: repeat(12, 1fr);
-//     grid-template-rows: repeat(2, auto);
-//     position: relative; 
-// }
+.locationImg {
+    grid-column-start: 7;
+    grid-column-end: 12;
+    grid-row-start: 1; 
+    position: absolute; 
+    bottom: -20px; 
+    right: 0; 
+    font-size: 0; 
+    box-shadow: -1rem 1rem 0 $marigold;
+}
 
-// .groupImg {
-//     grid-column-start: 1;
-//     grid-column-end: 6;
-//     position: absolute; 
-//     top: -40px; 
-//     left: 0; 
-//     box-shadow: 1rem 1rem 0 $marigold; 
-//     display: block; 
-//     font-size: 0;
-// }
-
-// .groupText {
-//     grid-row-start: 2; 
-//     grid-column-start: 1;
-//     grid-column-end: 6; 
-// }
-
-// .locationText {
-//     grid-column-start: 7; 
-//     grid-column-end: 12; 
-//     grid-row-start: 1; 
-//     padding-top: 1.5rem; 
-// }
-
-// .locationImg {
-//     grid-column-start: 7;
-//     grid-column-end: 12;
-//     grid-row-start: 1; 
-//     position: absolute; 
-//     bottom: -20px; 
-//     right: 0; 
-//     font-size: 0; 
-//     box-shadow: -1rem 1rem 0 $marigold;
-// }
-
-// free trials section styling
-
+// trials section styling
 .trials {
     background-color: $camoGreen;
     height: auto; 
@@ -298,7 +294,6 @@ footer p {
 .contactHeader {
     background-image: url(../mindnsoul-assets/contact-image-1.jpg);
     height: 90vh;   
-    position: relative; 
 }
 
 .contactHeader h2 {
@@ -311,11 +306,13 @@ footer p {
 .contactBody {
     background-color: $camoGreen;
     height: 100vh; 
+    position: relative; 
 }
 
 .contactBox {
     position: absolute; 
-    bottom: -20vw; 
+    float: left; 
+    top: -8rem; 
     left: 0; 
     background-color: $charcoal; 
     width: 50vw; 
@@ -328,9 +325,6 @@ footer p {
 .contactForm textarea { 
     margin: 0 auto; 
     background-color: $charcoal; 
-    // color: $iceBlue;
-    // font-size: 2rem; 
-; 
 }
 
 input#name,
@@ -365,7 +359,10 @@ button {
 }
 
 .contactInfo {
-    float: right;
+    float: right; 
+    width: auto; 
+    height: auto; 
+    padding: 4rem; 
 }
 
 .contactInfo i{ 
@@ -507,10 +504,52 @@ button {
 
 // ***RESPONSIVE DESIGN***
 
+@media (max-width: 950px) {
+    .contactBody {
+        display: flex; 
+        flex-direction: column;
+    }
+
+    .contactBox {
+        width: 80%; 
+    }
+
+    .contactInfo {
+        width: 100%; 
+        position: absolute; 
+        bottom: 0; 
+        padding: 0; 
+    }
+
+    .contactInfo p {
+        line-height: 2.3rem;  
+    }
+
+    .contactInfo br {
+        display: none; 
+    }
+
+}
+
 //HEADER STYLING FOR ALL PAGES 
 @media (max-width: 900px) {
+    h1 {
+        font-size: 10.5rem;
+    }
+
     h4 {
         visibility: hidden;
+    }
+}
+// 
+
+@media (max-width: 700px) {
+    header nav {
+        visibility: hidden; 
+    }
+
+    header i {
+        visibility: visible; 
     }
 }
 
