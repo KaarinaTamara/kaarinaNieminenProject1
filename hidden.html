@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindn'Soul</title>
+
+    <style>
+
+/* CREATED WITH ASSISTANCE BY https://techstacker.com/how-to-loop-background-color-animation-css/ */
+
+        @keyframes backgroundColour {
+            0% {
+                background-color: #6D7472; 
+            }
+
+            10% {
+                background-color: #f59d7d; 
+            }
+
+            20% {
+                background-color: #8896AB;
+            }
+
+            30% {
+                background-color: #466362;
+            }
+
+            40% {
+                background-color: #938581;
+            }
+
+            50% {
+                background-color: #7E6551;
+            }
+
+            60% {
+                background-color: #ADBCA5;
+            }
+
+            70% {
+                background-color: #E8B9AB;
+            }
+
+            80% {
+                background-color: #E09891;
+            }
+
+            90% {
+                background-color: #CB769E;
+            }
+
+            100% {
+                background-color: #8C5F66; 
+            }
+        }
+
+        @keyframes yogi {
+            0% {
+                transform: rotate(360deg); 
+            }
+        }
+
+        body {
+            background-color: #6D7472; 
+            animation-name: backgroundColour; 
+            animation-duration: 30s; 
+            animation-timing-function: ease-in-out; 
+            animation-iteration-count: infinite;
+        }
+
+        .yoga {
+            font-size: 10rem; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            animation-name: yogi;  
+            animation-duration: 30s; 
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="yoga">🧘‍♀️</div>
+</body>
+</html>

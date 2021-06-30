@@ -307,6 +307,10 @@ p {
   font-size: 2rem;
 }
 
+.hamburgerMenu {
+  visibility: hidden;
+}
+
 header i {
   position: absolute;
   top: 2.5rem;
@@ -314,6 +318,13 @@ header i {
   color: #FFC600;
   font-size: 3rem;
   visibility: hidden;
+}
+
+input[type=checkbox] {
+  display: none;
+  position: absolute;
+  top: 2.8rem;
+  right: 2.8rem;
 }
 
 nav ul {
@@ -476,13 +487,15 @@ i + h5 {
   height: auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-auto-rows: 50px;
   position: relative;
 }
 
 .groupImg {
   grid-column-start: 1;
   grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 8;
   position: absolute;
   top: -40px;
   left: 0;
@@ -493,22 +506,25 @@ i + h5 {
 }
 
 .groupText {
-  grid-row-start: 2;
+  grid-row-start: 7;
+  grid-row-end: 15;
   grid-column-start: 1;
-  grid-column-end: 6;
+  grid-column-end: 7;
+  padding-top: 2rem;
 }
 
 .locationText {
   grid-column-start: 7;
   grid-column-end: 12;
   grid-row-start: 1;
-  padding-top: 1.5rem;
+  grid-row-end: 7;
+  padding-top: 2rem;
 }
 
 .locationImg {
   grid-column-start: 7;
   grid-column-end: 12;
-  grid-row-start: 1;
+  grid-row-start: 7;
   position: absolute;
   bottom: -20px;
   right: 0;
@@ -547,7 +563,7 @@ footer p {
 }
 
 .contactHeader h2 {
-  float: left;
+  grid-column-end: 13;
   padding-top: 10%;
 }
 
@@ -555,11 +571,15 @@ footer p {
   background-color: #1E140E;
   height: 100vh;
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  grid-auto-rows: 50px;
 }
 
 .contactBox {
   position: absolute;
-  float: left;
+  grid-column-start: 1;
+  grid-column-end: 10;
   top: -8rem;
   left: 0;
   background-color: #262725;
@@ -607,11 +627,17 @@ button {
   font-size: 2rem;
 }
 
+.buttonAnchor:hover,
+.buttonAnchor:focus {
+  background-color: #FAFFFE;
+  color: #555F02;
+}
+
 .contactInfo {
-  float: right;
   width: auto;
   height: auto;
   padding: 4rem;
+  grid-column-start: 12;
 }
 
 .contactInfo i {
@@ -622,7 +648,6 @@ button {
 .headerBlog {
   background-image: url(../mindnsoul-assets/blog-image-1.jpg);
   height: 90vh;
-  position: relative;
 }
 
 .bodyBlog {
@@ -639,8 +664,6 @@ button {
 .discover {
   grid-column-start: 1;
   grid-column-end: 8;
-  top: 0;
-  left: 0;
 }
 
 .discoverImg {
@@ -737,30 +760,104 @@ button {
   background-color: #1E140E;
 }
 
+.submit:hover,
+.submit:focus {
+  background-color: #FFC600;
+  color: #555F02;
+}
+
 @media (max-width: 950px) {
-  .contactBody {
+  .programs {
+    height: auto;
+    display: grid;
+    position: relative;
+  }
+
+  .programs h5 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .groupImg,
+.locationImg {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+
+  .groupImg {
+    top: 0;
+    left: 0;
+  }
+
+  .locationImg {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .groupText {
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 10;
+  }
+
+  .locationText {
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 11;
+    grid-row-end: 20;
+  }
+
+  .groupText,
+.locationText {
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .contactBody {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 50px;
   }
 
   .contactBox {
-    width: 80%;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    top: 0;
+    width: 90vw;
+  }
+
+  input#name,
+input#email,
+textarea#message {
+    width: 100%;
   }
 
   .contactInfo {
+    grid-row-start: 11;
+    grid-row-end: 21;
+    grid-column-start: 1;
+    grid-column-end: 12;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    padding: 0;
-  }
-
-  .contactInfo p {
-    line-height: 2.3rem;
+    padding-bottom: 2rem;
   }
 
   .contactInfo br {
@@ -776,12 +873,102 @@ button {
     visibility: hidden;
   }
 }
+@media (max-width: 845px) {
+  .customOffers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .groupImg,
+.locationImg {
+    display: none;
+  }
+
+  .groupText,
+.locationText {
+    width: 90vw;
+    grid-column-start: 1;
+  }
+
+  .discover {
+    grid-column-start: 1;
+    grid-column-end: 12;
+  }
+
+  .mission {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 10;
+  }
+
+  .blogBox {
+    grid-column-start: 2;
+    grid-column-end: 11;
+  }
+
+  .comments {
+    grid-column-start: 2;
+    grid-column-end: 11;
+  }
+}
 @media (max-width: 700px) {
   header nav {
     visibility: hidden;
   }
 
+  h1 {
+    visibility: hidden;
+  }
+
+  h4 {
+    visibility: visible;
+  }
+
   header i {
     visibility: visible;
+  }
+}
+@media (max-width: 550px) {
+  h2 {
+    font-size: 9rem;
+  }
+}
+@media (max-width: 465px) {
+  h3 {
+    letter-spacing: 0.01rem;
+    font-size: 3.5rem;
+  }
+
+  h5 {
+    line-height: 2.5rem;
+  }
+
+  .groupText {
+    grid-row-end: 14;
+  }
+
+  .locationText {
+    grid-row-start: 15;
+    grid-row-end: 30;
+  }
+
+  .trialsText {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media (max-width: 380px) {
+  .image1,
+.adventurePic {
+    display: none;
+  }
+
+  .adventureText {
+    width: 100%;
   }
 }
