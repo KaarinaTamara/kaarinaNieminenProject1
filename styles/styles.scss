@@ -46,63 +46,20 @@ p {
 
 // NAVIGATION STYLINGS
 
-.hamburgerMenu {
-    visibility: hidden;
-}
-
-header i {
-    position: absolute; 
-    top: 2.5rem; 
-    right: 2.5rem; 
-    color: $marigold; 
-    font-size: 3rem; 
-    visibility: hidden; 
-}
-
-
-input[type="checkbox"] {
-    display: none; 
-    position: absolute;
-    top: 2.8rem; 
-    right: 2.8rem; 
-}
-
-
 nav ul {
     list-style-type: none;
     font-family: 'Lato', sans-serif;
     font-size: 2rem; 
     letter-spacing: .1rem; 
     line-height: 2.9rem; 
+    float: right;
+    margin-top: 0;  
 }
+
 
 a {
     text-decoration: none;
     color: $iceBlue; 
-}
-
-
-// hamburger menu nav 
-
-
-//*** HOME PAGE *** 
-
-// HEADER SECTION 
-
-.headerHome {
-    background-image: url(../mindnsoul-assets/home-image-1.jpg);
-    background-size: cover; 
-    position: relative; 
-    height: 90vh; 
-}
-
-header h4 {
-    float: left; 
-}
-
-nav ul {
-    float: right;
-    margin-top: 0;  
 }
 
 nav li {
@@ -122,6 +79,62 @@ nav a:hover,
 nav a:focus {
     text-decoration: underline; 
 }
+ 
+
+// hamburger menu 
+.hamburgerMenu {
+    position: absolute;
+    background-color: rgba($charcoal, 0.8); 
+    top: 2rem; 
+    right: 2rem; 
+    border-radius: 15px;
+    box-sizing: border-box; 
+    padding: 3rem; 
+}
+
+.hamburgerMenu a {
+    font-family: $lato;
+    display: block; 
+    padding: 2rem; 
+}
+
+.hamburgerMenu a:hover,
+.hamburgerMenu a:focus {
+    background-color: $marigold; 
+    border-radius: 15px; 
+    color: $iceBlue; 
+    -webkit-transition: background-color 0.6s ease-out, color 0.6s ease-out;
+    -moz-transition: background-color 0.6s ease-out, color 0.6s, ease-out; 
+    -o-transition: background-color 0.6s ease-out, color 0.6s ease-out;
+    transition: background-color 0.6s ease-out, color 0.6s ease-out; 
+}
+
+.burgerButton {
+    display: none; 
+    background: transparent; 
+    width: auto; 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+}
+
+
+//*** HOME PAGE *** 
+
+// HEADER SECTION 
+
+.headerHome {
+    background-image: url(../mindnsoul-assets/home-image-1.jpg);
+    background-size: cover; 
+    position: relative; 
+    height: 90vh; 
+}
+
+header h4 {
+    float: left; 
+}
+
+
 
 // end of header styling
 
@@ -257,7 +270,9 @@ i + h5 {
     grid-row-end: 15;  
     grid-column-start: 1;
     grid-column-end: 7; 
-    padding-top: 2rem; 
+    padding: 2rem; 
+    margin-top: 1rem; 
+    
 }
 
 .locationText {
@@ -373,7 +388,7 @@ textarea#message {
 }
 
 button {
-    background-color: $mudGreen; 
+    background-color: $mudGreen;
     color: $marigold; 
     border: none; 
     width: 90%; 
@@ -410,6 +425,10 @@ button {
 .headerBlog {
     background-image: url(../mindnsoul-assets/blog-image-1.jpg);
     height: 90vh;   
+}
+
+.headerBlog h2  {
+    padding-top: 10rem; 
 }
 
 
@@ -693,6 +712,13 @@ button {
     header nav {
         visibility: hidden; 
     }
+   
+    .burgerButton{
+        display: block; 
+    }
+    .hamburgerMenu {
+        display: none; 
+    }
 
     h1 {
         visibility: hidden;
@@ -702,47 +728,6 @@ button {
         visibility: visible;
     }
 
-    header i {
-        visibility: visible; 
-    }
-
-    // **MY ATTEMPT AT CREATING THE HAMBURGER MENU. I FOLLWED ALONG WITH THE WEBDEV CODE ALONG FOUND HERE: https://github.com/HackerYou/con-ed-web-dev/tree/master/module-14/slide-out-navigation
-    // I WAS UNSUCESSFUL BUT KEEPING THE WORK TO FIX IT WHEN I AM BETTER EDUCATED**
-
-    // ul.hamburgerMenu {
-    //     background-color: $marigold;
-    //     position: fixed; 
-    //     z-index: 50; 
-    //     width: 50%; 
-    //     right: -50%;
-    //     top: 0; 
-    //     height: 80%;
-    //     transition: all 0.3s; 
-    // }
-    
-    // ul.hamburgerMenu a {
-    //     color: $iceBlue;
-    //     display: inline-block; 
-    //     font-size: 6rem; 
-    //     width: 100%;
-    //     transition: all 0.3s;  
-    // }
-    
-    // ul.hamburgerMenu a:hover, 
-    // ul.hamburgerMenu a:focus {
-    //     background-color: $mudGreen; 
-    // }
-    
-    // input[type="checkbox"]:checked + ul.hamburgerMenu {
-    //     right: 0;
-    // }
-    
-    // label[for="toggle"] {
-    //     position: fixed; 
-    //     top: 1.5rem; 
-    //     left: 1.5rem; 
-    //     z-index: 50; 
-    // }
 }
 
 @media (max-width: 550px) {

@@ -22,24 +22,17 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             </nav>
-<!-- 
 
-    **MY ATTEMPT AT CREATING THE HAMBURGER MENU. I FOLLWED ALONG WITH THE WEBDEV CODE ALONG FOUND HERE: https://github.com/HackerYou/con-ed-web-dev/tree/master/module-14/slide-out-navigation
-
-    I WAS UNSUCESSFUL BUT KEEPING THE WORK TO FIX IT WHEN I AM BETTER EDUCATED**
-
-        <nav class="hiddenMenu">    
-            <label for="hamburger"><i class="fas fa-bars"></i></label>
-            
-            <ul class="hamburgerMenu">
-                <li><a href="index.html">Home</a>
-                <li><a href="hidden.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <input type="checkbox" id="toggle" name="toggle" />
-        </nav> -->
-
+<!-- hamburger menu -->
+            <button onclick="toggle()" id=burgerButton" class="burgerButton"><i class="fas fa-bars"></i></button>
+                
+            <div class="hamburgerMenu" id="hamburgerMenu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>            
+<!-- end of hamburger menu -->
 
         <h1>Mindn'Soul</h1>
         <img src="mindnsoul-assets/group.jpg" alt="backlit image of a person sitting in a yoga pose" class="image1">
@@ -125,5 +118,7 @@
     <footer>
         <p>Copyright © Juno College 2021 </p>
     </footer>
+
+<script src="script.js"></script>     
 </body>
 </html>
