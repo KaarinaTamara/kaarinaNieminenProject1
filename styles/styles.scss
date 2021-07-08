@@ -95,11 +95,9 @@ nav a:focus {
     border-radius: .45rem;
     box-sizing: border-box; 
     padding: 1.5rem; 
+    display: none; 
 }
 
-.showMenu {
-    transform: translateY(0);
-  }
 
 .hamburgerMenu a {
     font-size: 1rem; 

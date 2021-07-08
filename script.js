@@ -1,4 +1,4 @@
-// HAMBURGER MENU WAS CREATED WITH ASSISTANCE FROM CODING COMMANDERS AT https://www.youtube.com/watch?v=QMuIy72W5qk 
+// HAMBURGER MENU WAS CREATED WITH ASSISTANCE FROM CODING COMMANDERS AT https://www.youtube.com/watch?v=QMuIy72W5qk (with a little help from Gavyn Holt)
 
 
 function toggle () {
@@ -13,4 +13,3 @@ if (menu.style.display === "block") {
     }
 }
 
-// document.getElementById("burgerButton").addEventListener("click",toggle)

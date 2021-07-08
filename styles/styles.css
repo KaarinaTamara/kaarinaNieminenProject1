@@ -361,11 +361,7 @@ nav a:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 1.5rem;
-}
-
-.showMenu {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  display: none;
 }
 
 .hamburgerMenu a {
