@@ -12,8 +12,8 @@
     <script src="https://kit.fontawesome.com/757c64d630.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="headerHome clearfix">
-        <nav class="clearfix">
+    <header class="headerHome">
+        <nav>
             <h4>Mindn'Soul</h4>
             <ul>
                 <li><a class="selected" href="index.html">Home</a></li>
@@ -21,16 +21,16 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            </nav>
+        </nav>
 
 <!-- hamburger menu -->
-            <button onclick="toggle()" id=burgerButton" class="burgerButton"><i class="fas fa-bars"></i></button>
+            <button onclick="toggle()" id="burgerButton" class="burgerButton"><i class="fas fa-bars"></i></button>
                 
             <div class="hamburgerMenu" id="hamburgerMenu">
                 <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Blog</a>
-                <a href="#">Contact</a>
+                <a href="hidden.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
             </div>            
 <!-- end of hamburger menu -->
 

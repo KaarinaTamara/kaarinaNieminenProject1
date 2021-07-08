@@ -240,10 +240,14 @@ img {
   max-width: 100%;
 }
 
+* {
+  font-size: 125%;
+}
+
 h1 {
   font-family: "Dokdo", cursive;
   font-weight: 400;
-  font-size: 11.5rem;
+  font-size: 5.75rem;
   color: #FFC600;
   margin: 0;
   float: right;
@@ -252,17 +256,17 @@ h1 {
 h2 {
   font-family: "Dokdo", cursive;
   font-weight: 400;
-  font-size: 10.5rem;
+  font-size: 5.25rem;
   color: #FFC600;
   margin: 0;
-  line-height: 6.96rem;
-  letter-spacing: 1.009rem;
+  line-height: 3.48rem;
+  letter-spacing: 0.545rem;
 }
 
 h3 {
   font-family: "Dokdo", cursive;
   font-weight: 400;
-  font-size: 4.5rem;
+  font-size: 2.25rem;
   color: #FFC600;
   margin: 0;
   line-height: 5.8rem;
@@ -272,7 +276,7 @@ h3 {
 h4 {
   font-family: "Dokdo", cursive;
   font-weight: 400;
-  font-size: 4.15rem;
+  font-size: 2.075rem;
   color: #FFC600;
   margin: 0;
 }
@@ -280,21 +284,21 @@ h4 {
 h5 {
   font-family: "Dokdo", cursive;
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 2rem;
   color: #FFC600;
   margin: 0;
-  line-height: 5.8px;
-  letter-spacing: 0.43px;
+  line-height: 1.45rem;
+  letter-spacing: 0.05rem;
   padding-bottom: 1rem;
 }
 
 p {
   font-family: "Lato", sans-serif;
-  font-size: 2rem;
+  font-size: 1rem;
   color: #FAFFFE;
   font-weight: 400;
-  line-height: 3.2rem;
-  letter-spacing: 0.2rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.1rem;
   margin-top: 0;
 }
 
@@ -307,13 +311,25 @@ p {
   font-size: 2rem;
 }
 
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 nav ul {
   list-style-type: none;
   font-family: "Lato", sans-serif;
-  font-size: 2rem;
-  letter-spacing: 0.1rem;
-  line-height: 2.9rem;
-  float: right;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.45rem;
   margin-top: 0;
 }
 
@@ -324,11 +340,7 @@ a {
 
 nav li {
   display: inline-block;
-}
-
-nav a {
-  padding: 1rem;
-  margin-top: 0;
+  padding-right: 2rem;
 }
 
 .selected {
@@ -341,17 +353,23 @@ nav a:focus {
 }
 
 .hamburgerMenu {
-  position: absolute;
   background-color: rgba(38, 39, 37, 0.8);
-  top: 2rem;
-  right: 2rem;
-  border-radius: 15px;
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+  border-radius: 0.45rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 3rem;
+  padding: 1.5rem;
+}
+
+.showMenu {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .hamburgerMenu a {
+  font-size: 1rem;
   font-family: "Lato", sans-serif;
   display: block;
   padding: 2rem;
@@ -362,8 +380,8 @@ nav a:focus {
   background-color: #FFC600;
   border-radius: 15px;
   color: #FAFFFE;
-  -webkit-transition: background-color 0.6s ease-out, color 0.6s ease-out;
-  transition: background-color 0.6s ease-out, color 0.6s ease-out;
+  -webkit-transition: background-color 0.6s ease-in, color 0.6s ease-out;
+  transition: background-color 0.6s ease-in, color 0.6s ease-out;
 }
 
 .burgerButton {
@@ -375,15 +393,22 @@ nav a:focus {
   right: 0;
 }
 
+.burgerButton:hover,
+.hamburgerButton:focus {
+  color: #FAFFFE;
+}
+
 .headerHome {
   background-image: url(../mindnsoul-assets/home-image-1.jpg);
   background-size: cover;
   position: relative;
-  height: 90vh;
+  height: 80vh;
 }
 
-header h4 {
-  float: left;
+h1 {
+  position: absolute;
+  right: 3rem;
+  bottom: 5rem;
 }
 
 .image1 {
@@ -572,7 +597,9 @@ footer p {
 
 .contactHeader {
   background-image: url(../mindnsoul-assets/contact-image-1.jpg);
-  height: 90vh;
+  background-size: cover;
+  position: relative;
+  height: 80vh;
 }
 
 .contactHeader h2 {
@@ -660,7 +687,9 @@ button {
 
 .headerBlog {
   background-image: url(../mindnsoul-assets/blog-image-1.jpg);
-  height: 90vh;
+  background-size: cover;
+  position: relative;
+  height: 80vh;
 }
 
 .headerBlog h2 {
@@ -891,6 +920,10 @@ textarea#message {
   }
 }
 @media (max-width: 845px) {
+  .hamburgerMenu {
+    display: none;
+  }
+
   .customOffers {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -933,7 +966,7 @@ textarea#message {
     grid-column-end: 11;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 785px) {
   header nav {
     visibility: hidden;
   }
@@ -945,7 +978,8 @@ textarea#message {
   .hamburgerMenu {
     display: none;
   }
-
+}
+@media (max-width: 700px) {
   h1 {
     visibility: hidden;
   }

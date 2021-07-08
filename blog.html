@@ -13,18 +13,28 @@
 </head>
 
 <body>
-    <header class="headerBlog clearfix">
-            <nav class="clearfix">
-                <h4>Mindn'Soul</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a class="selected" href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <i class="fas fa-bars"></i>
-            <h2>Blog</h2>
+    <header class="headerBlog">
+        <nav>
+            <h4>Mindn'Soul</h4>
+            <ul>
+                <li><a class="selected" href="index.html">Home</a></li>
+                <li><a href="hidden.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+<!-- hamburger menu -->
+            <button onclick="toggle()" id=burgerButton" class="burgerButton"><i class="fas fa-bars"></i></button>
+                
+            <div class="hamburgerMenu" id="hamburgerMenu">
+                <a href="index.html">Home</a>
+                <a href="hidden.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>      
+<!-- end of hamburger menu -->
+
     </header>  
     <main class="bodyBlog">
         <section class="containerBlog">
@@ -96,5 +106,7 @@
     <footer>
         <p>Copyright © Juno College 2021 </p>
     </footer>
+
+    <script src="script.js"></script>     
 </body>
 </html>

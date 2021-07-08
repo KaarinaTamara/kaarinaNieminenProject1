@@ -5,38 +5,42 @@
 
 
 // GENERIC STYLING
+
+* {
+    font-size: 125%; 
+}
 // headings and fonts
 
 h1 {
-    @include headerFont (11.5rem, $marigold);
+    @include headerFont (5.75rem, $marigold);
     float: right; 
 }
 
 h2 {
-    @include headerFont (10.5rem, $marigold); 
-    line-height: 6.96rem;
-    letter-spacing: 1.009rem;
+    @include headerFont (5.25rem, $marigold); 
+    line-height: 3.48rem;
+    letter-spacing: .545rem;
 }
 
 h3 {
-    @include headerFont (4.5rem, $marigold); 
+    @include headerFont (2.25rem, $marigold); 
     line-height: 5.8rem;
     letter-spacing: .49rem;
 }
 
 h4 {
-    @include headerFont (4.15rem, $marigold);
+    @include headerFont (2.075rem, $marigold);
 }
 
 h5 {
-    @include headerFont (4rem, $marigold);
-    line-height: 5.8px; 
-    letter-spacing: .43px; 
+    @include headerFont (2rem, $marigold);
+    line-height: 1.45rem; 
+    letter-spacing: .05rem; 
     padding-bottom: 1rem; 
 }
 
 p {
-    @include bodyText (2rem, $iceBlue, 400, 3.2rem, .2rem)
+    @include bodyText (1rem, $iceBlue, 400, 1.6rem, .1rem)
 }
 
 // button
@@ -46,13 +50,18 @@ p {
 
 // NAVIGATION STYLINGS
 
+nav {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 nav ul {
     list-style-type: none;
     font-family: 'Lato', sans-serif;
-    font-size: 2rem; 
-    letter-spacing: .1rem; 
-    line-height: 2.9rem; 
-    float: right;
+    font-size: 1rem; 
+    letter-spacing: .05rem; 
+    line-height: 1.45rem; 
     margin-top: 0;  
 }
 
@@ -64,11 +73,7 @@ a {
 
 nav li {
     display: inline-block; 
-}
-
-nav a {
-    padding: 1rem; 
-    margin-top: 0; 
+    padding-right: 2rem; 
 }
 
 .selected {
@@ -83,19 +88,24 @@ nav a:focus {
 
 // hamburger menu 
 .hamburgerMenu {
-    position: absolute;
     background-color: rgba($charcoal, 0.8); 
-    top: 2rem; 
-    right: 2rem; 
-    border-radius: 15px;
+    position: absolute;
+    top: 1rem; 
+    right: 3rem;  
+    border-radius: .45rem;
     box-sizing: border-box; 
-    padding: 3rem; 
+    padding: 1.5rem; 
 }
 
+.showMenu {
+    transform: translateY(0);
+  }
+
 .hamburgerMenu a {
+    font-size: 1rem; 
     font-family: $lato;
     display: block; 
-    padding: 2rem; 
+    padding: 2rem;  
 }
 
 .hamburgerMenu a:hover,
@@ -103,10 +113,10 @@ nav a:focus {
     background-color: $marigold; 
     border-radius: 15px; 
     color: $iceBlue; 
-    -webkit-transition: background-color 0.6s ease-out, color 0.6s ease-out;
-    -moz-transition: background-color 0.6s ease-out, color 0.6s, ease-out; 
-    -o-transition: background-color 0.6s ease-out, color 0.6s ease-out;
-    transition: background-color 0.6s ease-out, color 0.6s ease-out; 
+    -webkit-transition: background-color 0.6s ease-in, color 0.6s ease-out;
+    -moz-transition: background-color 0.6s ease-in, color 0.6s, ease-out; 
+    -o-transition: background-color 0.6s ease-in, color 0.6s ease-out;
+    transition: background-color 0.6s ease-in, color 0.6s ease-out; 
 }
 
 .burgerButton {
@@ -118,6 +128,11 @@ nav a:focus {
     right: 0; 
 }
 
+.burgerButton:hover,
+.hamburgerButton:focus {
+    color: $iceBlue; 
+} 
+
 
 //*** HOME PAGE *** 
 
@@ -127,15 +142,14 @@ nav a:focus {
     background-image: url(../mindnsoul-assets/home-image-1.jpg);
     background-size: cover; 
     position: relative; 
-    height: 90vh; 
+    height: 80vh; 
 }
 
-header h4 {
-    float: left; 
+h1 {
+    position: absolute; 
+    right: 3rem; 
+    bottom: 5rem; 
 }
-
-
-
 // end of header styling
 
 .image1 {
@@ -329,7 +343,9 @@ footer p {
 
 .contactHeader {
     background-image: url(../mindnsoul-assets/contact-image-1.jpg);
-    height: 90vh;   
+    background-size: cover; 
+    position: relative; 
+    height: 80vh;  
 }
 
 .contactHeader h2 {
@@ -424,7 +440,9 @@ button {
 
 .headerBlog {
     background-image: url(../mindnsoul-assets/blog-image-1.jpg);
-    height: 90vh;   
+    background-size: cover; 
+    position: relative; 
+    height: 80vh;   
 }
 
 .headerBlog h2  {
@@ -667,6 +685,10 @@ button {
 
 @media (max-width: 845px) {
 
+    .hamburgerMenu {
+        display: none; 
+    }
+
     .customOffers {
         display: flex; 
         flex-direction: column; 
@@ -708,7 +730,7 @@ button {
 
 }
 
-@media (max-width: 700px) {
+@media (max-width: 785px) {
     header nav {
         visibility: hidden; 
     }
@@ -720,6 +742,9 @@ button {
         display: none; 
     }
 
+}
+
+@media (max-width: 700px) {
     h1 {
         visibility: hidden;
     }
